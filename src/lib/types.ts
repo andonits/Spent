@@ -26,6 +26,8 @@ export interface Transaction {
   categorySource: "ai" | "user" | null;
   aiConfidence: number | null;
   provider: string;
+  credentialId: number | null;
+  accountLabel: string | null;
   syncRunId: number;
   kind: "expense" | "income" | "transfer";
   needsReview: boolean;
@@ -256,7 +258,9 @@ export interface ActivitySnapshot {
 }
 
 export interface Integration {
+  id: number;
   provider: string;
+  label: string;
   createdAt: string;
   updatedAt: string;
   lastSyncAt: string | null;
